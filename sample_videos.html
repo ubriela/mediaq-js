@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Test Swagger Client</title>
+	<script language="JavaScript" src='swagger-client.min.js' type='text/javascript'></script>
+	<script type="text/javascript">
+
+	// initialize swagger, point to a resource listing
+	swagger = new SwaggerClient({
+		url: "http://mediaq.usc.edu/MediaQ_MVC_V3/docs/json/swagger.json",
+		success : function() {
+			swagger.apis.geoq.sample_videos({responseContentType: 'application/json'}, function(response) {
+				document.getElementById("myvideos").innerHTML = JSON.stringify(response.obj);
+			}, function(err) {
+				document.getElementById("myvideos").innerHTML = "No video data!";
+			});
+		}
+	});
+
+	</script>
+  </head>
+<body>
+  <div id="myvideos"></div>
+</body>
+</html>

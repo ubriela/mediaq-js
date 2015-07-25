@@ -1,0 +1,17 @@
+*.iml
+classpath.txt
+version.properties
+.project
+.classpath
+lib/
+*.swp
+*.swo
+*.pyc
+__pycache__
+.idea
+.DS_Store
+out/
+dist/
+build/
+README.md~
+*~
