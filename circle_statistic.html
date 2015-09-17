@@ -12,7 +12,7 @@
 			swagger.clientAuthorizations.add("apiKey", new SwaggerClient.ApiKeyAuthorization("X-API-KEY",'8b51UFM2SlBltx3s6864eUO1zSoefeK5',"query"));
 
 			// Range query
-			swagger.apis.geoq.circle_statistic({lat : 34.019972, lng: -118.2886, radius: 100}, {responseContentType: 'application/json'}, function(response) {
+			swagger.apis.geoq.circle_statistic({lat : 34.019972, lng: -118.2886, radius: 100, startdate:'1979-01-01 20:00:00', enddate:'2016-01-01 20:00:00'}, {responseContentType: 'application/json'}, function(response) {
 				document.getElementById("myvideos").innerHTML = JSON.stringify(response.obj);
 			}, function(err) {
 				document.getElementById("myvideos").innerHTML = "No video data!";

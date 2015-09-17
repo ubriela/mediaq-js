@@ -11,11 +11,11 @@
 			// Authorization, please provie actual api key
 			swagger.clientAuthorizations.add("apiKey", new SwaggerClient.ApiKeyAuthorization("X-API-KEY",'8b51UFM2SlBltx3s6864eUO1zSoefeK5',"query"));
 
-			// Range query
-			swagger.apis.geoq.rectangle_statistic({swlat : 34.019972, swlng: -118.291588, nelat: 34.021111, nelng: -118.287125, startdate:'1979-02-01 20:00:00', enddate:'2016-01-01 20:00:00'}, {responseContentType: 'application/json'}, function(response) {
-				document.getElementById("myvideos").innerHTML = JSON.stringify(response.obj);
+			// query
+			swagger.apis.geoq.cellid2videos({cellid:"124020+61709"}, {responseContentType: 'application/json'}, function(response) {
+				document.getElementById("mydata").innerHTML = JSON.stringify(response.obj);
 			}, function(err) {
-				document.getElementById("myvideos").innerHTML = "No video data!";
+				document.getElementById("mydata").innerHTML = "No data!";
 			});
 		}
 	});
@@ -23,6 +23,6 @@
 	</script>
   </head>
 <body>
-  <div id="myvideos"></div>
+  <div id="mydata"></div>
 </body>
 </html>
